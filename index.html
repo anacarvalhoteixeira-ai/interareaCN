@@ -1,0 +1,482 @@
+﻿<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f4e7d2" />
+    <title>Maré Viva — cuidado que nasce do território</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      :root {
+        --sea: #075c58;
+        --deep: #123f3d;
+        --terra: #c76a3b;
+        --sand: #f4e7d2;
+        --ink: #263535;
+        --white: #fffaf2;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: var(--sand);
+        color: var(--ink);
+        font:
+          16px/1.6 Arial,
+          sans-serif;
+      }
+      a {
+        color: inherit;
+      }
+      .wrap {
+        width: min(1120px, calc(100% - 40px));
+        margin: auto;
+      }
+      .top {
+        padding: 18px 0;
+        border-bottom: 1px solid #123f3d22;
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+      .brand {
+        color: var(--sea);
+        font-size: 1.45rem;
+        font-weight: 900;
+        line-height: 1;
+        text-decoration: none;
+      }
+      .brand small {
+        display: block;
+        color: var(--ink);
+        font-size: 0.65rem;
+        letter-spacing: 0.2em;
+        margin-top: 7px;
+      }
+      .links {
+        display: flex;
+        gap: 22px;
+        flex-wrap: wrap;
+        font-size: 0.9rem;
+      }
+      .links a {
+        text-decoration: none;
+      }
+      .hero {
+        padding: 76px 0 58px;
+        background: linear-gradient(125deg, #f4e7d2 60%, #e6d1ae);
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        align-items: center;
+        gap: 48px;
+      }
+      .eyebrow {
+        color: var(--terra);
+        font-size: 0.78rem;
+        font-weight: bold;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+      .hero h1 {
+        font-size: clamp(2.7rem, 6vw, 5.3rem);
+        line-height: 0.98;
+        color: var(--deep);
+        letter-spacing: -0.05em;
+        margin: 15px 0 22px;
+      }
+      .hero p {
+        max-width: 540px;
+        font-size: 1.1rem;
+      }
+      .button {
+        display: inline-block;
+        background: var(--sea);
+        color: white;
+        padding: 13px 20px;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: bold;
+        margin-top: 12px;
+      }
+      .selo{
+        width:300px;
+      }
+      .section {
+        padding: 76px 0;
+      }
+      .section h2 {
+        font-size: clamp(2rem, 4vw, 3.25rem);
+        line-height: 1.05;
+        color: var(--deep);
+        margin: 8px 0 20px;
+        letter-spacing: -0.035em;
+      }
+      .intro {
+        max-width: 760px;
+        font-size: 1.1rem;
+      }
+      .paper {
+        background: var(--white);
+      }
+      .two {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 44px;
+        align-items: center;
+      }
+      .quote {
+        border-left: 4px solid var(--terra);
+        padding: 8px 0 8px 22px;
+        font-size: 1.18rem;
+        color: var(--deep);
+      }
+      .chips {
+        display: flex;
+        gap: 9px;
+        flex-wrap: wrap;
+        margin-top: 24px;
+      }
+      .chip {
+        border: 1px solid #075c5850;
+        padding: 7px 12px;
+        border-radius: 99px;
+        color: var(--sea);
+        font-size: 0.85rem;
+      }
+      .video-box {
+        background: #123f3d;
+        color: var(--white);
+        padding: 25px;
+        border-radius: 22px;
+      }
+      .video-box video {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16/9;
+        background: #082e2c;
+        border-radius: 12px;
+      }
+      .video-box p {
+        margin-bottom: 0;
+        color: #e0e8db;
+        font-size: 0.9rem;
+      }
+      .steps {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+        margin-top: 32px;
+        counter-reset: step;
+      }
+      .step {
+        background: var(--white);
+        border-radius: 16px;
+        padding: 22px;
+        counter-increment: step;
+      }
+      .step:before {
+        content: counter(step, decimal-leading-zero);
+        display: inline-grid;
+        place-items: center;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: var(--terra);
+        color: white;
+        font-weight: bold;
+        margin-bottom: 12px;
+      }
+      .step h3 {
+        color: var(--deep);
+        margin: 3px 0 8px;
+      }
+      .step p {
+        margin: 0;
+      }
+      .note {
+        border-radius: 14px;
+        background: #e7d6b8;
+        padding: 16px 18px;
+        font-size: 0.91rem;
+        margin-top: 22px;
+      }
+      .identity {
+        width: 100%;
+        display: block;
+        border-radius: 16px;
+        box-shadow: 0 12px 32px #213c361c;
+      }
+      .end {
+        background: var(--deep);
+        color: var(--sand);
+        padding: 55px 0;
+      }
+      .end h2 {
+        color: var(--sand);
+      }
+      footer {
+        padding: 20px 0;
+        background: #0c302f;
+        color: #c6d7cd;
+        font-size: 0.84rem;
+      }
+      .footerline {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      @media (max-width: 760px) {
+        .hero {
+          padding: 52px 0 42px;
+        }
+        .hero-grid,
+        .two {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+        .hero-art {
+          min-height: 260px;
+        }
+        .links {
+          display: none;
+        }
+        .steps {
+          grid-template-columns: 1fr;
+        }
+        .section {
+          padding: 56px 0;
+        }
+        .hero h1 {
+          font-size: 3.3rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="top">
+      <div class="wrap nav">
+        <a class="brand" href="#inicio"
+          >Maré Viva<small>ESFOLIANTE NATURAL</small></a
+        >
+        <nav class="links" aria-label="Navegação principal">
+          <a href="#territorio">Território</a><a href="#video">Tutorial</a
+          ><a href="#etapas">Etapas</a><a href="#produto">Produto</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="hero" id="inicio">
+        <div class="wrap hero-grid">
+            <div>
+                <span class="eyebrow">Do mar de Paripe, para o seu cuidado</span>
+                <h1>O mar também ensina a cuidar.</h1>
+                <p>
+                Maré Viva propõe um novo destino para resíduos da mariscagem.
+                Neste protótipo, o insumo calcário foi adquirido de um fornecedor
+                comercial. Conheça a proposta, a escolha dos materiais e cada
+                etapa do esfoliante.
+                </p>
+                <a class="button" href="#video">Conheça o processo ↓</a>
+            </div>
+            <div class="selo">            
+                <img class="selo" src="./assets/Selo_Circular_Maré_Viva-removebg-preview.png">         
+            </div>
+        </div>
+      </section>
+      <section class="section paper" id="territorio">
+        <div class="wrap two">
+          <div>
+            <span class="eyebrow">Território, memória e movimento</span>
+            <h2>Um produto com raízes na comunidade.</h2>
+            <p class="intro">
+              A Maré Viva dialoga com o artigo
+              <em
+                >“Territórios da Amefricanidade: mulheres negras em movimento —
+                do 2 de Julho ao Julho das Pretas”</em
+              >
+              ao aproximar território, protagonismo das mulheres negras e
+              cuidado. A ideia de reaproveitar resíduos da mariscagem aponta
+              para uma possibilidade de reduzir descartes e valorizar saberes e
+              atividades locais.
+            </p>
+            <p>
+              As conchas e as ondas da identidade visual lembram a relação com o
+              mar. A referência às marisqueiras reconhece quem conhece, trabalha
+              e cria nesse território. Cascas de mariscos que muitas vezes
+              acabam descartadas entre a fauna e a flora podem inspirar
+              iniciativas de reaproveitamento e oportunidades para o comércio
+              local.
+            </p>
+            <div class="chips">
+              <span class="chip">Paripe · Salvador</span
+              ><span class="chip">Reaproveitamento</span
+              ><span class="chip">Saberes da comunidade</span>
+            </div>
+          </div>
+          <div>
+            <aside class="note">
+              <strong>Transparência sobre o protótipo:</strong> o artigo relata
+              contaminação identificada em São Tomé de Paripe em 2026. Por
+              precaução, não coletamos conchas diretamente no território para
+              este protótipo. O insumo calcário utilizado foi adquirido de
+              fornecedor comercial. O reaproveitamento de resíduos da mariscagem
+              é uma proposta que queremos incentivar, não a origem do material
+              deste lote.
+            </aside>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="video">
+        <div class="wrap two">
+          <div>
+            <span class="eyebrow">Do resíduo ao cuidado</span>
+            <h2>Veja como o esfoliante ganha forma.</h2>
+            <p>
+              Assista ao tutorial da equipe e acompanhe o preparo do protótipo
+              com o insumo calcário de fornecedor comercial. O vídeo pode ser
+              atualizado quando a produção estiver pronta.
+            </p>
+            <p>
+              Uma experiência feita para compartilhar conhecimento, valorizar o
+              trabalho local e mostrar cada etapa com transparência.
+            </p>
+          </div>
+          <div class="video-box">
+            <video
+              controls
+              preload="metadata"
+              poster="assets/mareviva.png"
+              aria-label="Tutorial da produção do esfoliante Maré Viva"
+            >
+              <source src="video-esfoliante.mp4" type="video/mp4" />
+              Seu navegador não consegue reproduzir este vídeo. Confira as
+              etapas escritas abaixo.
+            </video>
+            <p>
+              Quando estiver pronto, coloquem o arquivo
+              <strong>video-esfoliante.mp4</strong> na pasta do site.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="section paper" id="etapas">
+        <div class="wrap">
+          <span class="eyebrow">Passo a passo</span>
+          <h2>Etapas da produção</h2>
+          <p class="intro">
+            Um resumo visual do processo. Ajustem os detalhes desta lista para
+            corresponder ao método real demonstrado no vídeo da equipe.
+          </p>
+          <div class="steps">
+            <article class="step">
+              <h3>Origem e seleção</h3>
+              <p>
+                Neste protótipo, o insumo calcário foi adquirido de fornecedor
+                comercial. A coleta de conchas diretamente em São Tomé de Paripe
+                foi descartada por causa da contaminação relatada no artigo.
+              </p>
+            </article>
+            <article class="step">
+              <h3>Higienização e preparo</h3>
+              <p>
+                O insumo comercial passa pelo preparo definido pela equipe.
+                Registrem aqui os procedimentos realmente adotados para este
+                protótipo.
+              </p>
+            </article>
+            <article class="step">
+              <h3>Preparo do insumo</h3>
+              <p>
+                O insumo calcário preparado é processado até atingir a textura
+                planejada para a formulação, conforme o método mostrado no
+                tutorial.
+              </p>
+            </article>
+            <article class="step">
+              <h3>Formulação</h3>
+              <p>
+                A matéria-prima é combinada aos demais ingredientes da receita
+                do grupo, como óleo vegetal e açúcar mascavo.
+              </p>
+            </article>
+            <article class="step">
+              <h3>Envase e identificação</h3>
+              <p>
+                O protótipo é acondicionado e identificado com a composição e as
+                orientações de uso definidas pela equipe.
+              </p>
+            </article>
+            <article class="step">
+              <h3>Compartilhamento</h3>
+              <p>
+                O QR code da embalagem leva a esta página, reunindo o tutorial,
+                as etapas e a história por trás da Maré Viva.
+              </p>
+            </article>
+          </div>
+          <aside class="note">
+            <strong>Uso previsto:</strong> somente nas áreas secas e
+            ásperas, como sola dos pés e cotovelos. Após a jornada de trabalho,
+            lave e seque os pés antes de aplicar suavemente e enxaguar. Não use
+            no rosto, em pele irritada, ferida ou com fissuras; suspenda se
+            houver desconforto. O protótipo não substitui a higiene nem
+            avaliação profissional. A segurança da formulação deve ser avaliada
+            por pessoa qualificada antes de qualquer distribuição.
+          </aside>
+        </div>
+      </section>
+      <section class="section" id="produto">
+        <div class="wrap two">
+          <div>
+            <span class="eyebrow">Identidade Maré Viva</span>
+            <h2>Cores e símbolos que contam de onde viemos.</h2>
+            <p>
+              Verde-mar, terracota, areia e marrom formam a paleta da marca. As
+              ondas falam do movimento e do litoral; a concha, da abundância do
+              mar; e a figura da mulher negra, do protagonismo das marisqueiras
+              e dos saberes ancestrais.
+            </p>
+            <p>
+              O conceito da embalagem propõe reaproveitar resíduos da mariscagem
+              e valorizar a comunidade que vive essa relação com o mar. Neste
+              protótipo, porém, o insumo calcário veio de fornecedor comercial:
+              nenhuma concha foi coletada na praia contaminada.
+            </p>
+          </div>
+          <img
+            class="identity"
+            src="assets/mareviva.png"
+            alt="Painel de identidade visual da Maré Viva: rótulo, embalagem, paleta de cores e símbolos inspirados no mar de Paripe"
+          />
+        </div>
+      </section>
+      <section class="end">
+        <div class="wrap">
+          <span class="eyebrow">Maré Viva · São Tomé de Paripe</span>
+          <h2>Cuidar também é reconhecer o território.</h2>
+          <p>
+            Uma proposta de reaproveitamento, memória e cuidado ligada ao
+            território e às pessoas que vivem do mar.
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="wrap footerline">
+        <span>Maré Viva · Esfoliante natural</span
+        ><span>Projeto desenvolvido pela equipe de Ciências da Natureza · SESI Milton Santos</span>
+      </div>
+    </footer>
+  </body>
+</html>
+
+
